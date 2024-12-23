@@ -1,0 +1,11 @@
+ {
+  "mongodb": {
+    "url": "mongodb://localhost:27017/medhub"
+  },
+
+  "migrationsDir": "migrations",
+  "changelogCollectionName": "changelog",
+  "migrationFileExtension": ".ts",
+  "useFileHash": false,
+  "moduleSystem": "commonjs"
+}

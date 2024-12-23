@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "lib": ["DOM","ESNext"],
+    "baseUrl": "./", // Đường dẫn cơ bản, relative từ thư mục `migrate`
+    "rootDir": ".", // Thư mục gốc là thư mục hiện tại (migrate)
+    "outDir": "dist", // Kết quả biên dịch
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["**/*.ts", "../types.d.ts"], // Bao gồm tất cả các file .ts và types.d.ts từ thư mục gốc
+  "exclude": ["node_modules", "../dist"]
+}

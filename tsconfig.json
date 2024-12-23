@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES2020",                       // Mục tiêu phiên bản JavaScript
+    "module": "CommonJS",                     // Sử dụng module system CommonJS (phổ biến cho Node.js)
+    "lib": ["ES2020", "DOM"],                 // Bao gồm các thư viện cần thiết (cho front-end và Node.js)
+    "outDir": "./dist",                       // Thư mục xuất file biên dịch
+    "rootDir": "./src",                       // Thư mục gốc của dự án
+    "strict": true,                           // Bật chế độ kiểm tra nghiêm ngặt
+
+    /* Additional Checks */
+    "noImplicitAny": true,                    // Không cho phép kiểu `any` ẩn
+    "strictNullChecks": true,                 // Bắt buộc kiểm tra null và undefined
+    "strictFunctionTypes": true,              // Bật kiểm tra kiểu hàm nghiêm ngặt
+    "strictBindCallApply": true,              // Kiểm tra nghiêm ngặt các phương thức .bind, .call, và .apply
+    "noUnusedLocals": true,                   // Cảnh báo biến không sử dụng
+    "noUnusedParameters": true,               // Cảnh báo tham số không sử dụng
+    "noImplicitReturns": true,                // Cảnh báo khi hàm không trả về rõ ràng
+
+    /* Module Resolution */
+    "moduleResolution": "Node",               // Sử dụng module resolver của Node.js
+    "esModuleInterop": true,                  // Hỗ trợ import kiểu ESModule
+    "allowSyntheticDefaultImports": true,     // Cho phép import mặc định
+    "resolveJsonModule": true,                // Cho phép import file JSON
+    "typeRoots": ["./node_modules/@types" ,"./src/types.d.ts"],   // Đường dẫn tới các định nghĩa kiểu (TypeScript typings)
+
+    /* Output Options */
+    "declaration": true,                      // Xuất file `.d.ts` (định nghĩa kiểu)
+    "declarationMap": true,                   // Xuất bản đồ định nghĩa kiểu
+    "sourceMap": true,                        // Tạo file source map để debug
+    "removeComments": true,                   // Xóa comment trong file biên dịch
+
+    /* Experimental Options */
+    "experimentalDecorators": true,           // Hỗ trợ decorator (thường dùng trong NestJS)
+    "emitDecoratorMetadata": true,            // Xuất metadata cho decorator
+
+    /* Linting Support */
+    "skipLibCheck": true,                     // Bỏ qua kiểm tra kiểu trong các thư viện (giảm thời gian biên dịch)
+    "forceConsistentCasingInFileNames": true,  // Bắt buộc tên file phân biệt hoa thường
+    "baseUrl": ".",
+    "paths":{
+      "@app/*": ["src/*"],
+      "@core/*": ["src/core/*","./core/*"],
+      "@utils/*": ["src/utils/*"],
+      "@modules/*": ["src/modules/*"],
+      "*": ["node_modules/*"]
+    }
+  },
+  "include": ["src"],                         // Chỉ định thư mục cần biên dịch
+  "exclude": ["node_modules", "dist","migrate"]         // Loại trừ các thư mục không cần thiết
+}
